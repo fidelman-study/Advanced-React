@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import CartCount from "./CartCount";
 import SignOut from "./SignOut";
 import { useUser } from "./User";
 import NavStyles from "./styles/NavStyles";
@@ -21,13 +21,13 @@ export default function Nav() {
 
           <button type="button" onClick={openCart}>
             My Cart
-            {/* <CartCount
+            <CartCount
               count={user.cart.reduce(
                 (tally, cartItem) =>
                   tally + (cartItem.product ? cartItem.quantity : 0),
                 0
               )}
-            /> */}
+            />
           </button>
         </>
       )}
