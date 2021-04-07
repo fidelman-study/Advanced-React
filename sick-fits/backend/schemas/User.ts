@@ -7,6 +7,13 @@ export const User = list({
     email: text({ isRequired: true, isUnique: true }),
     password: password(),
     orders: relationship({ ref: "Order.user", many: true }),
+    role: relationship({
+      ref: "Role.assignedTo",
+      // access: {
+      //   create: permissions.canManageUsers,
+      //   update: permissions.canManageUsers,
+      // },
+    }),
     cart: relationship({
       ref: "CartItem.user",
       many: true,
