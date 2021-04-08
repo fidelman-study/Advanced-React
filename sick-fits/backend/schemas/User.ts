@@ -26,5 +26,9 @@ export const User = list({
         },
       },
     }),
+    products: relationship({
+      ref: "Product.user",
+      many: true,
+    }),
   },
 });
